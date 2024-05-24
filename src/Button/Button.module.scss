@@ -1,3 +1,6 @@
+// BUTTON
+@use "mixins";
+
 .button {
   transition: all 200ms 0s ease;
   position: relative;
@@ -7,5 +10,272 @@
   color: #fff;
   &:active {
     transform: translateY(1px);
+  }
+}
+
+// -> Inner
+.inner {
+  color: inherit;
+  position: relative;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding-inline: 1.25rem;
+  font-weight: 700;
+  height: 100%;
+  width: 100%;
+}
+
+.loader {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(#000, 0.6);
+  transition: all 200ms 0s ease;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  .loaderIcon {
+    transform: translateY(150%);
+    transition: all 200ms 200ms ease;
+    color: #fff;
+  }
+  &.loadingShow {
+    opacity: 1;
+    .loaderIcon {
+      transform: translateY(0);
+    }
+  }
+}
+
+.spinner {
+  width: 1.5em;
+  height: 1.5em;
+  border: 0.15em solid #fff;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 800ms linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loading {
+  pointer-events: none;
+  user-select: none;
+}
+
+// -> Block
+.block {
+  display: block;
+  width: 100%;
+}
+
+// -> Disabled
+.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+  user-select: none;
+}
+
+// -> Sizes
+// -> height/padding/font_size/radius/inner_radius
+$buttons_sizes: (
+  "large" 2.75rem 1.25rem 0.9375rem 0.5rem 0.4375rem,
+  "medium" 2.5rem 1rem 0.875rem 0.5rem 0.4375rem,
+  "small" 2rem 0.875rem 0.8125rem 0.375rem 0.3125rem,
+  "xsmall" 1.75rem 0.75rem 0.75rem 0.25rem 0.1875rem
+);
+
+@each $name, $height, $padding, $font_size, $radius,
+  $inner_radius in $buttons_sizes
+{
+  .#{$name} {
+    border-radius: $radius;
+    height: $height;
+    font-size: $font_size;
+    .inner {
+      border-radius: $inner_radius;
+      padding-inline: $padding;
+    }
+  }
+}
+
+// -> Variant Solid
+// background_color/hover_color/active_color
+$variant_solid: (
+  "primary" var(--color-primary-600) var(--color-primary-500)
+    var(--color-primary-800),
+  "warning" var(--color-yellow-500) var(--color-yellow-400)
+    var(--color-yellow-600),
+  "danger" var(--color-red-600) var(--color-red-500) var(--color-red-700),
+  "success" var(--color-green-500) var(--color-green-400) var(--color-green-600)
+);
+
+@each $name, $background_color, $hover_color, $active_color in $variant_solid {
+  .#{$name} {
+    &.solid {
+      background-color: $background_color;
+      @if $name == "warning" {
+        color: var(--color-black-950);
+      }
+      @if $name == "success" {
+        color: var(--color-black-950);
+      }
+      &:hover {
+        &:not(.loading) {
+          @include mixins.from-tablet {
+            background-color: $hover_color;
+          }
+        }
+      }
+      &:active {
+        background-color: $active_color;
+      }
+    }
+  }
+}
+
+// -> Variant Outline
+// text_color/active_color
+$variant_outline: (
+  "primary" var(--color-primary-400) var(--color-primary-950),
+  "warning" var(--color-yellow-500) var(--color-yellow-950),
+  "danger" var(--color-red-600) var(--color-red-950),
+  "success" var(--color-green-500) var(--color-green-950)
+);
+
+.outline {
+  border-width: 0.0625rem;
+  border-style: solid;
+  border-color: var(--color-black-600);
+  &:hover {
+    &:not(.loading) {
+      @include mixins.from-tablet {
+        border-color: currentColor;
+      }
+    }
+  }
+}
+
+@each $name, $text_color, $active_color in $variant_outline {
+  .#{$name} {
+    &.outline {
+      color: $text_color;
+      &:active {
+        background-color: $active_color;
+      }
+    }
+  }
+}
+
+// -> Variant Gradient
+//border_gradient/bg_gradient/shadow_color
+$variant_gradient: (
+  "primary" var(--gradient-primary-light) var(--gradient-primary)
+    var(--color-primary-950),
+  "warning" var(--gradient-yellow-light) var(--gradient-yellow)
+    var(--color-yellow-950),
+  "danger" var(--gradient-red-light) var(--gradient-red) var(--color-red-950),
+  "success" var(--gradient-green-light) var(--gradient-green)
+    var(--color-green-950)
+);
+
+.gradient {
+  text-shadow: 0 2px rgba(#000, 0.5);
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 3;
+    opacity: 0;
+    top: 0;
+    filter: blur(1px);
+  }
+  &:before {
+    background-image: url('data:image/svg+xml,<svg width="57" height="44" viewBox="0 0 57 44" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M57 0H27L0 44H30L57 0Z" fill="white"/></svg>');
+    height: 2.75rem;
+    width: 3.5625rem;
+    left: -3.5625rem;
+  }
+  &:after {
+    background-image: url('data:image/svg+xml,<svg width="35" height="44" viewBox="0 0 35 44" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M35 0H27L0 44H8L35 0Z" fill="white"/></svg>');
+    height: 2.75rem;
+    width: 2.1875rem;
+    left: -2.1875rem;
+  }
+  &.large {
+    box-shadow: 0 20px 20px -15px transparent;
+  }
+  &.medium {
+    box-shadow: 0 15px 15px -10px transparent;
+  }
+  &.small {
+    box-shadow: 0 10px 10px -5px transparent;
+  }
+  &.xsmall {
+    box-shadow: 0 10px 10px -5px transparent;
+  }
+  &:hover {
+    @include mixins.from-tablet {
+      filter: brightness(125%);
+      &:before,
+      &:after {
+        left: 110%;
+        opacity: 0.8;
+        transition: all 500ms 0s cubic-bezier(0.79, 0.14, 0.15, 0.86);
+      }
+      &:after {
+        transition-delay: 100ms;
+      }
+    }
+  }
+  &:active {
+    filter: brightness(90%);
+    box-shadow: none;
+  }
+}
+
+@each $name, $border_gradient, $bg_gradient, $shadow_color in $variant_gradient
+{
+  .#{$name} {
+    &.gradient {
+      background-image: $border_gradient;
+      &.large {
+        &:hover {
+          box-shadow: 0 20px 20px -15px $shadow_color;
+        }
+      }
+      &.medium {
+        &:hover {
+          box-shadow: 0 15px 15px -10px $shadow_color;
+        }
+      }
+      &.small {
+        &:hover {
+          box-shadow: 0 10px 10px -5px $shadow_color;
+        }
+      }
+      &.xsmall {
+        &:hover {
+          box-shadow: 0 10px 10px -5px $shadow_color;
+        }
+      }
+      .inner {
+        background-image: $bg_gradient;
+      }
+    }
   }
 }

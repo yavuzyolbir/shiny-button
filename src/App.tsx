@@ -2,9 +2,18 @@ import Button from "./Button";
 
 function App() {
   return (
-    <>
-      <Button />
-    </>
+    <div
+      style={{
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        height: "100vh",
+      }}
+    >
+      <Button variant="gradient" size="large" loading={false}>
+        Hover Me!
+      </Button>
+    </div>
   );
 }
 

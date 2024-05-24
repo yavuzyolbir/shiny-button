@@ -1,0 +1,89 @@
+// VARIABLES
+@use "./colors";
+
+// -> Sizes
+:root {
+  --height-header: 4rem;
+  --width-dock: 4rem;
+  --padding-input-md: 1rem;
+  --height-input-md: 2.5rem;
+}
+
+// -> Typography
+:root {
+  --font-family-title: var(--font-space-grotesk), system-ui, -apple-system,
+    "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial,
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+    "Noto Color Emoji";
+  --font-family-body: var(--font-mulish), system-ui, -apple-system, "Segoe UI",
+    Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+// -> Colors
+:root {
+  @each $key, $value in colors.$black {
+    --color-black-#{$key}: #{$value};
+  }
+  @each $key, $value in colors.$primary {
+    --color-primary-#{$key}: #{$value};
+  }
+  @each $key, $value in colors.$blue {
+    --color-blue-#{$key}: #{$value};
+  }
+  @each $key, $value in colors.$yellow {
+    --color-yellow-#{$key}: #{$value};
+  }
+  @each $key, $value in colors.$red {
+    --color-red-#{$key}: #{$value};
+  }
+  @each $key, $value in colors.$green {
+    --color-green-#{$key}: #{$value};
+  }
+  --color-white: #fff;
+  --gradient-primary: linear-gradient(
+    0deg,
+    var(--color-primary-950) 0%,
+    var(--color-primary-700) 100%
+  );
+  --gradient-primary-light: linear-gradient(
+    0deg,
+    var(--color-primary-950) 0%,
+    var(--color-primary-400) 100%
+  );
+  --gradient-yellow: linear-gradient(
+    0deg,
+    var(--color-yellow-900) 0%,
+    var(--color-yellow-600) 100%
+  );
+  --gradient-yellow-light: linear-gradient(
+    0deg,
+    var(--color-yellow-900) 0%,
+    var(--color-yellow-300) 100%
+  );
+  --gradient-red: linear-gradient(
+    0deg,
+    var(--color-red-900) 0%,
+    var(--color-red-600) 100%
+  );
+  --gradient-red-light: linear-gradient(
+    0deg,
+    var(--color-red-900) 0%,
+    var(--color-red-400) 100%
+  );
+  --gradient-green: linear-gradient(
+    0deg,
+    var(--color-green-900) 0%,
+    var(--color-green-600) 100%
+  );
+  --gradient-green-light: linear-gradient(
+    0deg,
+    var(--color-green-900) 0%,
+    var(--color-green-300) 100%
+  );
+}
+
+// -> Font Awesome
+:root {
+  // --fa-animation-duration: 0.5s;
+}

@@ -1,0 +1,46 @@
+// MIXINS
+
+@use "sass:map";
+@use "colors";
+
+@mixin from-vertical-tablet {
+  @media screen and (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin from-tablet {
+  @media screen and (min-width: 992px) {
+    @content;
+  }
+}
+
+@mixin from-desktop {
+  @media screen and (min-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin from-large-desktop {
+  @media screen and (min-width: 1400px) {
+    @content;
+  }
+}
+
+@mixin for-mobile-only {
+  @media screen and (max-width: 575.98px) {
+    @content;
+  }
+}
+
+@function color-opacity($color, $weight, $opacity) {
+  $colors: (
+    "black": map.get(colors.$black, $weight),
+    "primary": map.get(colors.$primary, $weight),
+    "blue": map.get(colors.$blue, $weight),
+    "yellow": map.get(colors.$yellow, $weight),
+    "red": map.get(colors.$red, $weight),
+    "green": map.get(colors.$green, $weight),
+  );
+  @return rgba(map.get($colors, $color), $opacity);
+}
