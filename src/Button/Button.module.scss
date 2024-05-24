@@ -1,0 +1,11 @@
+.button {
+  transition: all 200ms 0s ease;
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  padding: 0.0625rem;
+  color: #fff;
+  &:active {
+    transform: translateY(1px);
+  }
+}
