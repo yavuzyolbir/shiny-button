@@ -1,7 +1,8 @@
 // BUTTON
-@use "mixins";
+@import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap");
 
 .button {
+  font-family: "Mulish", sans-serif;
   transition: all 200ms 0s ease;
   position: relative;
   overflow: hidden;
@@ -134,9 +135,7 @@ $variant_solid: (
       }
       &:hover {
         &:not(.loading) {
-          @include mixins.from-tablet {
-            background-color: $hover_color;
-          }
+          background-color: $hover_color;
         }
       }
       &:active {
@@ -161,9 +160,7 @@ $variant_outline: (
   border-color: var(--color-black-600);
   &:hover {
     &:not(.loading) {
-      @include mixins.from-tablet {
-        border-color: currentColor;
-      }
+      border-color: currentColor;
     }
   }
 }
@@ -229,17 +226,15 @@ $variant_gradient: (
     box-shadow: 0 10px 10px -5px transparent;
   }
   &:hover {
-    @include mixins.from-tablet {
-      filter: brightness(125%);
-      &:before,
-      &:after {
-        left: 110%;
-        opacity: 0.8;
-        transition: all 500ms 0s cubic-bezier(0.79, 0.14, 0.15, 0.86);
-      }
-      &:after {
-        transition-delay: 100ms;
-      }
+    filter: brightness(125%);
+    &:before,
+    &:after {
+      left: 110%;
+      opacity: 0.8;
+      transition: all 500ms 0s cubic-bezier(0.79, 0.14, 0.15, 0.86);
+    }
+    &:after {
+      transition-delay: 100ms;
     }
   }
   &:active {

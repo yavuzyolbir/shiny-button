@@ -1,25 +1,6 @@
 // VARIABLES
 @use "./colors";
 
-// -> Sizes
-:root {
-  --height-header: 4rem;
-  --width-dock: 4rem;
-  --padding-input-md: 1rem;
-  --height-input-md: 2.5rem;
-}
-
-// -> Typography
-:root {
-  --font-family-title: var(--font-space-grotesk), system-ui, -apple-system,
-    "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial,
-    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
-    "Noto Color Emoji";
-  --font-family-body: var(--font-mulish), system-ui, -apple-system, "Segoe UI",
-    Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-}
-
 // -> Colors
 :root {
   @each $key, $value in colors.$black {
@@ -27,9 +8,6 @@
   }
   @each $key, $value in colors.$primary {
     --color-primary-#{$key}: #{$value};
-  }
-  @each $key, $value in colors.$blue {
-    --color-blue-#{$key}: #{$value};
   }
   @each $key, $value in colors.$yellow {
     --color-yellow-#{$key}: #{$value};
@@ -81,9 +59,4 @@
     var(--color-green-900) 0%,
     var(--color-green-300) 100%
   );
-}
-
-// -> Font Awesome
-:root {
-  // --fa-animation-duration: 0.5s;
 }

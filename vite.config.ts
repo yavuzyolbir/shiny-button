@@ -7,7 +7,10 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      mixins: path.resolve(__dirname, "./src/styles/mixins.scss"),
+      "@": path.resolve(__dirname, "src"),
+      mixins: path.resolve(__dirname, "src/styles/mixins.scss"),
+      components: path.resolve(__dirname, "src/components"),
+      pages: path.resolve(__dirname, "src/pages"),
     },
   },
 });
