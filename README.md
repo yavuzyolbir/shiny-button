@@ -1,10 +1,6 @@
-
 # Shiny Button (React + TypeScript)
 
 Shiny Button is a versatile React button component designed to add style and functionality to your modern web projects. Enhance your user experience with its flexibility and aesthetic design.
-
-
-
 
 ## Features
 
@@ -16,20 +12,23 @@ Shiny Button is a versatile React button component designed to add style and fun
 - **TypeScript and SASS Support:** Offers a more type-safe and easy-to-manage styling experience.
 - **Light Animation:** Interactive light animation on hover for an engaging user experience. (Only gradient variant)
 
-  
 ## Usage
 
-Using the Shiny Button component is straightforward. Here are some examples showing how to leverage its features:
+[Download](https://github.com/yavuzyolbir/shiny-button/archive/refs/heads/main.zip), Add to Your Project, and Use 🤷🏻‍♂️
 
-  
 #### Examples
+
 ### Basic Usage
 
 ```javascript
-import Button from './[my-components-folder]/Button'
+import Button from "./[my-components-folder]/Button";
 
 function App() {
-  return <Button variant="gradient" theme="primary" >Get Started</Button>
+  return (
+    <Button variant="gradient" theme="primary">
+      Get Started
+    </Button>
+  );
 }
 
 // --> <button type="button" >Get Started</button>
@@ -38,17 +37,11 @@ function App() {
 ### Usage with href Prop:
 
 ```javascript
-import Button from './[my-components-folder]/Button'
+import Button from "./[my-components-folder]/Button";
 
 function App() {
-  return <Button href="#" >Get Started</Button>
+  return <Button href="#">Get Started</Button>;
 }
 
 // --> <a href="#">Get Started</button>
 ```
-
-  
-#### Download, Add to Your Project, and Use
-[Download Shiny Button](https://github.com/yavuzyolbir/shiny-button/archive/refs/heads/main.zip)
-
-  
