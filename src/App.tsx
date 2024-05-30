@@ -11,7 +11,7 @@ function Home() {
       }}
     >
       <Button variant="gradient" size="large">
-        Download
+        Shiny Button
       </Button>
     </div>
   );

@@ -186,6 +186,28 @@ $variant_gradient: (
     var(--color-green-950)
 );
 
+@keyframes beforeLine {
+  from {
+    left: -3.5625rem;
+    opacity: 0;
+  }
+  to {
+    left: 110%;
+    opacity: 1;
+  }
+}
+
+@keyframes afterLine {
+  from {
+    left: -2.1875rem;
+    opacity: 0;
+  }
+  to {
+    left: 110%;
+    opacity: 1;
+  }
+}
+
 .gradient {
   text-shadow: 0 2px rgba(#000, 0.5);
   &:before,
@@ -198,18 +220,25 @@ $variant_gradient: (
     opacity: 0;
     top: 0;
     filter: blur(1px);
+    animation-duration: 500ms;
+    animation-delay: 300ms;
+    animation-iteration-count: 1;
+    animation-timing-function: cubic-bezier(0.79, 0.14, 0.15, 0.86);
   }
   &:before {
     background-image: url('data:image/svg+xml,<svg width="57" height="44" viewBox="0 0 57 44" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M57 0H27L0 44H30L57 0Z" fill="white"/></svg>');
     height: 2.75rem;
     width: 3.5625rem;
     left: -3.5625rem;
+    animation-name: beforeLine;
   }
   &:after {
     background-image: url('data:image/svg+xml,<svg width="35" height="44" viewBox="0 0 35 44" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M35 0H27L0 44H8L35 0Z" fill="white"/></svg>');
     height: 2.75rem;
     width: 2.1875rem;
     left: -2.1875rem;
+    animation-name: afterLine;
+    animation-delay: 400ms;
   }
   &.large {
     box-shadow: 0 20px 20px -15px transparent;
