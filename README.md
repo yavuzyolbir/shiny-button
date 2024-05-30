@@ -58,7 +58,7 @@ function App() {
 | `variant`  | Set button variant                             | `solid` \| `gradient` \| `outline`              | solid   |
 | `block`    | Option to fit button width to its parent width | `boolean`                                       | false   |
 | `disabled` | Disabled state of button                       | `boolean`                                       | false   |
-| `disabled` | Set the loading status of button               | `boolean`                                       | false   |
+| `loading`  | Set the loading status of button               | `boolean`                                       | false   |
 
 ##
 
