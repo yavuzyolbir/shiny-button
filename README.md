@@ -2,7 +2,7 @@
 
 Shiny Button is a versatile React button component designed to add style and functionality to your modern web projects. Enhance your user experience with its flexibility and aesthetic design.
 
-<img src="https://shiny-button-omega.vercel.app/thumbnail.jpg" width="640"  height="320" alt="Shiny Button" />
+<img src="https://shiny-button-omega.vercel.app/thumbnail.jpg" width="640" alt="Shiny Button" />
 
 
 ## Features
