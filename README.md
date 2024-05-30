@@ -2,6 +2,9 @@
 
 Shiny Button is a versatile React button component designed to add style and functionality to your modern web projects. Enhance your user experience with its flexibility and aesthetic design.
 
+<img src="https://shiny-button-omega.vercel.app/thumbnail.jpg" width="640"  height="320" alt="Shiny Button" />
+
+
 ## Features
 
 - **Multiple Color Options:** Adapts to your project with a variety of color choices.
@@ -14,7 +17,7 @@ Shiny Button is a versatile React button component designed to add style and fun
 
 ## Usage
 
-[![Demo](https://www.yavuzyolbir.com/github/demo.svg)](https://shiny-button-omega.vercel.app/)
+<a href="https://shiny-button-omega.vercel.app/" target="_blank" ><img src="https://www.yavuzyolbir.com/github/demo.svg" /></a>
 
 [![Download](https://www.yavuzyolbir.com/github/button.svg)](https://github.com/yavuzyolbir/shiny-button/archive/refs/heads/main.zip)
 
@@ -64,4 +67,4 @@ function App() {
 
 ##
 
-Follow me on [X](https://x.com/yavuzyolbir)
+Follow me on <a href="https://x.com/yavuzyolbir" target="_blank" >X</a>
