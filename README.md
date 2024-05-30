@@ -14,6 +14,8 @@ Shiny Button is a versatile React button component designed to add style and fun
 
 ## Usage
 
+[![Demo](https://www.yavuzyolbir.com/github/demo.svg)](https://shiny-button-omega.vercel.app/)
+
 [![Download](https://www.yavuzyolbir.com/github/button.svg)](https://github.com/yavuzyolbir/shiny-button/archive/refs/heads/main.zip)
 
 Add to Your Project, and Use 🤷🏻‍♂️
