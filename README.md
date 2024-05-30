@@ -14,7 +14,9 @@ Shiny Button is a versatile React button component designed to add style and fun
 
 ## Usage
 
-[Download](https://github.com/yavuzyolbir/shiny-button/archive/refs/heads/main.zip), Add to Your Project, and Use 🤷🏻‍♂️
+[![Download](https://www.yavuzyolbir.com/github/button.svg)](https://github.com/yavuzyolbir/shiny-button/archive/refs/heads/main.zip)
+
+Add to Your Project, and Use 🤷🏻‍♂️
 
 #### Examples
 
@@ -45,3 +47,19 @@ function App() {
 
 // --> <a href="#">Get Started</button>
 ```
+
+## Props
+
+| Property   | Description                                    | Type                                            | Default |
+| :--------- | :--------------------------------------------- | :---------------------------------------------- | :------ |
+| `href`     | Redirect url of link button                    | `string`                                        | -       |
+| `theme`    | Set button type                                | `primary` \| `warning` \| `danger` \| `success` | primary |
+| `size`     | Set the size of button                         | `large` \| `medium` \| `small` \| `xsmall`      | medium  |
+| `variant`  | Set button variant                             | `solid` \| `gradient` \| `outline`              | solid   |
+| `block`    | Option to fit button width to its parent width | `boolean`                                       | false   |
+| `disabled` | Disabled state of button                       | `boolean`                                       | false   |
+| `disabled` | Set the loading status of button               | `boolean`                                       | false   |
+
+##
+
+Follow me on [X](https://x.com/yavuzyolbir)
